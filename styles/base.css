@@ -19,12 +19,12 @@ header img {
 }
 
 nav{
-    background-color: black;
+    background-color: rgb(180, 172, 172);
     color: white;
     padding: .5rem;
 }
 
-nav ul {
+nav ul, a {
     display: flex;
     flex-direction: row;
     margin: 0;
@@ -36,19 +36,17 @@ nav ul {
     list-style-type: none;
   }
 
-/*
-nav a {
-    display: block;
-    padding: 1rem;
-    font-size: 1.3rem;
+
+li a {
     text-decoration: none;
+    color: black;
   }
 
-  /*
 nav a:hover {
     background-color: #efe59d;
     color: black;
-  }  */
+  }  
+    
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
