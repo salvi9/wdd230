@@ -40,18 +40,7 @@
         grid-column: 1/ span 2
     }
 
-    main h3 {
-        background-color: rgb(199, 221, 233);
-        text-align: center;
-        margin: 0;
-        padding: 0.5rem;
 
-    }
 }
 
 /* Class Selectors */
-
-.card {
-    border: 1px solid black;
-    box-shadow: 20px 20px 50px grey;
-}
