@@ -1,0 +1,57 @@
+
+@media screen and (min-width: 500px){
+    body {
+        max-width: 80%;
+        margin: auto;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: .5fr auto auto 1fr;
+        column-gap: 10px;
+        padding: 1rem;
+    
+    }
+
+    nav{
+        background-color: rgb(180, 172, 172);
+        padding: .5rem;
+        align-items: center;
+    }
+    
+    nav ul, a {
+        display: flex;
+        flex-direction: row;
+    
+    }
+    
+    nav a:hover {
+        background-color: #efe59d;
+        color: black;
+    }  
+        
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 16px;
+    }
+    
+    main h2 {
+        grid-column: 1/ span 2
+    }
+
+    main h3 {
+        background-color: rgb(199, 221, 233);
+        text-align: center;
+        margin: 0;
+        padding: 0.5rem;
+
+    }
+}
+
+/* Class Selectors */
+
+.card {
+    border: 1px solid black;
+    box-shadow: 20px 20px 50px grey;
+}
