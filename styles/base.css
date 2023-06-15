@@ -40,6 +40,7 @@ li {
 nav li {
     padding: .5rem;
     text-align-last: center;
+    display: none;
 }
 
 
@@ -48,9 +49,18 @@ li a {
     color: black;
 }
 
-nav li:hover {
+nav li a{
+    display: block;
+	padding: 1rem;
+	text-align: center;
+	text-decoration: none;
+}
+
+nav li a:hover {
     background-color: #efe59d;
     color: black;
+	font-weight: 700;
+
 }  
     
 main {
@@ -87,6 +97,10 @@ footer {
     box-shadow: 20px 20px 50px grey;
 }
 
+.card li a{
+    padding: .5rem;
+}
+
 #menu::before {
 	content: "☰";
 }
@@ -99,23 +113,6 @@ footer {
 	display: flex;
 	flex-direction: column;
 	list-style: none;
-	background-color: #333;
-	color: #fff;
-}
-.navigation li {
-	display: none;
-}
-.navigation li a {
-	display: block;
-	padding: 1rem;
-	text-align: center;
-	text-decoration: none;
-	color: #fff;
-}
-.navigation li a:hover {
-	background-color: #bbb;
-	color: #333;
-	font-weight: 700;
 }
 
 .open li {
