@@ -59,9 +59,11 @@ nav li a{
 nav li a:hover {
     background-color: #efe59d;
     color: black;
-	font-weight: 700;
+}
 
-}  
+li a:hover {
+    font-weight: 700;
+}
     
 main {
     display: grid;
