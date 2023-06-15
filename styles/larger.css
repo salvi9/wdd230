@@ -18,6 +18,10 @@
         padding: .5rem;
         align-items: center;
     }
+
+    #menu {
+		display: none; /* hide hamburger button */
+	}
     
     nav ul, a {
         display: flex;
