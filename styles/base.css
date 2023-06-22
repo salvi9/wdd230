@@ -65,14 +65,27 @@ li a:hover {
     font-weight: 700;
 }
     
-main {
+.overlay {
+    position: absolute;
+    left: 110px;
+    bottom: 390px;
+
+}
+
+.hero img{
+    width: 100%;
+    height: auto;
+    grid-column: 1 / span 3;
+}
+
+.learning_information {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 16px;
+    grid-template-rows: 1fr 2fr 1fr;
+    row-gap: 16px;
 }
 
 main h2 {
-    grid-column: 1/ span 2
+    grid-column: 1/  2;
 }
 
 main h3 {
@@ -81,6 +94,11 @@ main h3 {
     margin: 0;
     padding: 0.5rem;
 
+}
+
+iframe {
+    width: 100%;
+    margin-top: 1em;
 }
 
 footer {
@@ -97,6 +115,11 @@ footer {
 .card {
     border: 1px solid black;
     box-shadow: 20px 20px 50px grey;
+}
+
+.card p {
+    text-align: center;
+    padding: 1rem;
 }
 
 .card li a{
