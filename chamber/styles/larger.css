@@ -49,22 +49,6 @@
         flex-direction: row;
     }
 
-    .weather_current h2 {
-        background-color: #BFDBF7;
-        margin: 0;
-        padding: .5rem;
-        
-    }
-
-    .weather_section {
-        width: 70%;
-        margin-right: 1rem;
-        border: 1px solid black;
-    }
-
-    .weather_section p {
-        padding: .2rem;
-    }
 
     .current_events {
         width: 30%;
@@ -93,14 +77,38 @@
         text-align: center;
     }
 
-    .footer_cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+
+    /* Discover Page*/
+
+    .discover_page h1 {
+        text-align: center;
+        background-color: #ECF0F3;
+        padding: 1em;
+        padding-top: none;
+    }
+
+    .dis_sites h2 {
         text-align: center;
     }
 
-    .useful_links  li {
-        padding: .3rem;
-    }   
-    
+    .discover_page_main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .left_sidebar {
+        background-color: #0067CB;
+        color: white;
+        padding: 2rem;
+    }
+
+    .sites_container {
+        display: flex;
+        margin: 1em;
+    }
+
+
+    .sites1 h3, p {
+        width: 80%;
+    }
 }

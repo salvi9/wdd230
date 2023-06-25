@@ -1,7 +1,7 @@
 
 document.getElementById('lastModified').textContent = new Date(document.lastModified);
 
-
+// Hamburger Menu
 const hamButton = document.querySelector('#menu');
 const navigation = document.querySelector('.navigation');
 
@@ -11,27 +11,31 @@ hamButton.addEventListener('click', () => {
 });
 
 
-// Save the current timestamp to local storage
+// Tracking visit and Time in between page visit for Discover Page
+let lastVisitedTime = localStorage.getItem('lastVisitedTime');
 localStorage.setItem('lastVisitedTime', new Date().toString());
 
-// Retrieve the last visited time from local storage
-var lastVisitedTime = localStorage.getItem('lastVisitedTime');
-if (lastVisitedTime = lastVisitedTime) {
-    localStorage.setItem('lastVisitedTime', new Date().toString());
+let currentTime = new Date();
+let lastVisitedDate = new Date(lastVisitedTime);
+let timeDifference = currentTime.getTime() - lastVisitedDate.getTime();
+
+
+let secondsDifference = Math.floor(timeDifference / 1000);
+let daysDifference = Math.floor(secondsDifference / 86400)
+localStorage.setItem('secondsDifference', secondsDifference);
+
+const visitsDisplay = document.querySelector(".visits");
+let numVisits = Number(window.localStorage.getItem("numVisits-ls")) || 0;
+
+numVisits++;
+localStorage.setItem("numVisits-ls", numVisits);
+
+if (numVisits == 1) {
+    document.querySelector('.lastVisitedTime').textContent = "Welcome! Let us know if you have any questions";
+} else if (secondsDifference > 1 && secondsDifference < 86400 && numVisits > 1) {
+    document.querySelector('.lastVisitedTime').textContent = "Back so soon! Awesome";
+} else if (secondsDifference > 86400 && numVisits > 1 ) {
+    document.querySelector('.lastVisitedTime').textContent = `You last visited ${daysDifference}`;
+} else if (secondsDifference > 86400 && numVisits > 2 ) {
+    document.querySelector('.lastVisitedTime').textContent = `You last visited ${daysDifference}s`;
 }
-
-// Calculate the difference between the current visit and last visited time
-var currentTime = new Date();
-var lastVisitedDate = new Date(lastVisitedTime);
-var timeDifference = currentTime.getTime() - lastVisitedDate.getTime();
-
-// Convert the time difference to seconds
-var secondsDifference = Math.floor(timeDifference / 1000);
-
-console.log('Last visited time:', lastVisitedTime);
-console.log('Current time:', currentTime.toString());
-console.log('Time difference (seconds):', secondsDifference);
-
-document.querySelector('.lastVisitedTime').textContent = lastVisitedDate
-
-
