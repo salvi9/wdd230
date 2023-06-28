@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/larger.css">
+    <link rel="stylesheet" href="./styles/form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,500&display=swap" rel="stylesheet">
@@ -32,56 +33,42 @@
         </nav>
     </header>  
     <main>
-        <div>
-            <img class="hero" src="./images/hero.jpg" alt="Hero Image">
-        </div>
-        <div class="weather_current">
-            <div class="weather_section">
-                <h2>Current Weather</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Reiciendis ut id dicta quidem delectus vitae?
-                </p>
-            </div>
-            <div class="current_events">
-                <h2>Current Events</h2>
-                <ul>
-                    <li>event1</li>
-                    <li>event2</li>
-                </ul>
-            </div>
-        </div>
-        <div class="spotlight_ads">
-            <div class="company">
-                <img src="./images/comp_logo1.png" alt="company1">
-                <h3>company1</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Doloribus eos nisi, dolorem quae autem praesentium nemo 
-                    repudiandae modi repellat consequatur commodi, quos deleniti 
-                    quaerat omnis, cum error asperiores! Fugit, pariatur.</p>
-            </div>
-            <div class="company">
-                <img src="./images/comp_logo2" alt="company2">
-                <h3>company2</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                    Repudiandae laudantium iusto id vitae, dolor consequatur 
-                    cupiditate optio iure aperiam? Consequatur molestias optio 
-                    dolores dolore tempora!</p>
-            </div>
-            <div class="company">
-                <img src="./images/comp_logo3.png" alt="company3">
-                <h3>company3</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Alias nesciunt qui corrupti id iusto mollitia minus, iure 
-                    doloremque modi consequatur.</p>
-            </div>
-        </div>
-        <div class="call_to_action">
-            <h2>Rowland Heights Chamber of Commerce</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Quasi qui quo iusto vel voluptatum accusantium?</p>
-            <button class="call_to_action">Join Now!</button>
-        </div>
+        <h1>Chamber of Commerce Application</h1>
+            <div id="formmessage"></div>
+            <form method="get" action="./record.html">
+            <fieldset>
+                <legend>Applicant Information</legend>
+                <label class="top">Username*<input type="text" name="username"required></label>
+                <label class="top" for="keyphrase">Your Key Phrase<input type="password" id="keyphrase" name="keyphrase" pattern="[a-zA-Z0-9]{8,}" placeholder="At least eigh alphanumeric characters long."></label>
+                
+                <label class="top" for="keyphrase2">Re-enter Your Key Phrase<input type="password" id="keyphrase2" name="keyphrase2"></label>
+                
+                <label class="top">Email*<input type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" title="Please enter a valid email address" required></label>                
+            </fieldset>
+            <fieldset>
+                <label for="r">Page Rating</label>
+                <div id="rangevalue">0</div>
+                <input type="range" id="r" name="r" min="0" max="10" value="0" step="1" list="rangevalues">
+                <datalist id="rangevalues">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+
+                </datalist>
+                <div class="ref">
+            </fieldset>
+            
+            </fieldset>
+            <input type="submit" value="Join" class="submitBtn">
+            </form>
         <div class="footer_cards">
             <div class="useful_links">
                 <h3>Useful Links</h3>
