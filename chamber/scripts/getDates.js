@@ -46,8 +46,6 @@ const kp2 = document.querySelector("#keyphrase2");
 const message = document.querySelector("#formmessage");
 
 kp2.addEventListener("focusout", checkSame);
-
-// This should be refactored.
 function checkSame() {
 	if (kp1.value !== kp2.value) {
 		message.textContent = "❗Key Phrases DO NOT MATCH!";
@@ -65,7 +63,7 @@ function checkSame() {
 const rangevalue = document.getElementById("rangevalue");
 const range = document.getElementById("r");
 
-// RANGE event listener
+// Page Rating
 range.addEventListener('change', displayRatingValue);
 range.addEventListener('input', displayRatingValue);
 
