@@ -40,7 +40,7 @@ if (numVisits == 1) {
     document.querySelector('.lastVisitedTime').textContent = `You last visited ${daysDifference}s`;
 }
 
-// Password Confirmation for Join Page
+// Password Confirmation for Form Page
 const kp1 = document.querySelector("#keyphrase");
 const kp2 = document.querySelector("#keyphrase2");
 const message = document.querySelector("#formmessage");
@@ -70,3 +70,5 @@ range.addEventListener('input', displayRatingValue);
 function displayRatingValue() {
     rangevalue.innerHTML = range.value;
 }
+
+document.querySelector('#timestamp').textContent = currentTime

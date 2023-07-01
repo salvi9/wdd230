@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/larger.css">
-    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./styles/join.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,500&display=swap" rel="stylesheet">
@@ -28,47 +28,46 @@
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./discover.html">Discover</a></li>
                 <li><a href="./index.html">Directory</a></li>
-                <li><a href="./form.html">Join</a></li>
+                <li><a href="./join.html">Join</a></li>
             </ul>
         </nav>
     </header>  
-    <main>
+    <main class="join_page">
         <h1>Chamber of Commerce Application</h1>
             <div id="formmessage"></div>
             <form method="get" action="./record.html">
             <fieldset>
                 <legend>Applicant Information</legend>
-                <label class="top">Username*<input type="text" name="username"required></label>
-                <label class="top" for="keyphrase">Password<input type="password" id="keyphrase" name="keyphrase" pattern="[a-zA-Z0-9]{8,}" placeholder="At least eigh alphanumeric characters long."></label>
-                
-                <label class="top" for="keyphrase2">Re-enter Password<input type="password" id="keyphrase2" name="keyphrase2"></label>
-                
-                <label class="top">Email*<input type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@byui\.edu$" title="Please enter a valid email address" required></label>                
+                <label class="top">First Name*<input type="text" name="fname" id="fname" required></label>
+                <label class="top">Last Name*<input type="text" name="lname" id="lname" required></label>
+                <label class="top">Title or Position<input type="text" name="title" id="title" pattern="[a-zA-Z\s-]{7,}"></label>
+                <label class="top">Email*<input type="email" name="email" placeholder="someone@gmail.com" required></label>   
+                <label class="top">Phone Number*<input type="tel" name="telephone" id="telephone" required></label>             
             </fieldset>
             <fieldset>
-                <label for="r">Page Rating</label>
-                <div id="rangevalue">0</div>
-                <input type="range" id="r" name="r" min="0" max="10" value="0" step="1" list="rangevalues">
-                <datalist id="rangevalues">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-
-                </datalist>
-                <div class="ref">
+                <legend>Membership</legend>
+                <div>Membership Tier</div>
+                <label class="sbs"><input type="radio" name="tier" value="NP">NP Membership</label>
+                <label class="sbs"><input type="radio" name="tier" value="Bronze">Bronze Membership</label>
+                <label class="sbs"><input type="radio" name="tier" value="Silver">Silver Membership</label>
+                <label class="sbs"><input type="radio" name="tier" value="Gold">Gold Membership</label>
+                <label class="top">Business Description<textarea type="text" name="description" id="description" required></textarea>
+                <label class="top"><span id="timestamp"></span>:<input type="hidden" id="timestamp" name="timestamp"></label>
             </fieldset>
             
             </fieldset>
             <input type="submit" value="Join" class="submitBtn">
             </form>
+            <div class="membership_info">
+                <h2>NP Membership</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis officia omnis magnam vero porro numquam.</p>
+                <h2>Bronze Membership</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam nesciunt, inventore molestias nobis dolore in.</p>
+                <h2>Silver Membership</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eius quasi cupiditate animi nostrum rem.</p>
+                <h2>Gold Membership</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum exercitationem quam aliquid similique architecto.</p>
+            </div>
         <div class="footer_cards">
             <div class="useful_links">
                 <h3>Useful Links</h3>
