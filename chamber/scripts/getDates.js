@@ -71,4 +71,4 @@ function displayRatingValue() {
     rangevalue.innerHTML = range.value;
 }
 
-document.querySelector('#timestamp').textContent = currentTime
+document.querySelector('#timestamp').textContent = currentTime;
