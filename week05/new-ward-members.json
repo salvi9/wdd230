@@ -1,0 +1,20 @@
+{
+    "familyName" : "Hernandez",
+    "dateMoved" : "05-09-2022",
+    "familyNumber" : 2,
+    "bishopricVisit" : "Yes",
+    "familyMember" : [
+        {
+            "name" : "Danny Hernandez",
+            "gender" : "Male",
+            "birthdate" : "05-09-1996"
+        },
+        {
+            "name" : "Na Rah Hernandez",
+            "gender" : "Female",
+            "birthdate" : "10-11-1998"
+        }
+
+    ]
+
+}
