@@ -122,6 +122,10 @@ footer {
     padding: 1rem;
 }
 
+.card figure {
+    display: flex;
+}
+
 .card li a{
     padding: .5rem;
 }
