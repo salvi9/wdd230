@@ -72,3 +72,15 @@ function displayRatingValue() {
 }
 
 document.querySelector('#timestamp').textContent = currentTime;
+
+//Directory page
+const url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
+const cards = document.querySelector('#directory_cards');
+
+async function getMemberData() {
+	const response = await fetch(url);
+	const data = await response.json();
+	console.log(data.members);
+}
+
+getMemberData();
