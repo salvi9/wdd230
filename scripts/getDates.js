@@ -87,7 +87,7 @@ getLinks();
 
 const displayLinks = (weeks) => {
     weeks.forEach((week) => {      
-       link1.setAttribute('href', week.links.url);
-       link1.textContent(`${week.links.title}`);
+       link1.setAttribute('href', week.links[0].url);
+       link1.textContent(`${week[0].links[1].title}`);
     });
 };

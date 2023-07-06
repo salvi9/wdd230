@@ -1,0 +1,60 @@
+{
+    "members": [
+        {
+            "name":"Audrey Timmerman",
+            "address":"1234 California",
+            "phone":"123-456-7890",
+            "url":"./index.html",
+            "image":"",
+            "membershipLevel":"Gold Member since 2012"
+        },
+        {
+            "name":"Blaze Hazzard",
+            "address":"1334 Utah",
+            "phone":"123-456-7890",
+            "url":"./index.html",
+            "image":"",
+            "membershipLevel":"Bronze Member since 2018"
+        },
+        {
+            "name":"Scotts Blake",
+            "address":"1234 Virginia",
+            "phone":"123-456-7890",
+            "url":"./index.html",
+            "image":"",
+            "membershipLevel":"Gold Member since 2019"
+        },
+        {
+            "name":"Jake Live",
+            "address":"1234 Nevada",
+            "phone":"123-456-7890",
+            "url":"./index.html",
+            "image":"",
+            "membershipLevel":"NP Membership since 2023"
+        },
+        {
+            "name":"Jules Mayhen",
+            "address":"1234 Carolina",
+            "phone":"123-456-7890",
+            "url":"./index.html",
+            "image":"",
+            "membershipLevel":"Silver Member since 2020"
+        },
+        {
+            "name":"Rayon Beckett",
+            "address":"1345 Okal",
+            "phone":"123-456-7890",
+            "url":"./index.html",
+            "image":"",
+            "membershipLevel":"Silver Member since 2018"
+        },
+        {
+            "name":"Derain Jones",
+            "address":"1234 Charlotte",
+            "phone":"123-456-7890",
+            "url":"./index.html",
+            "image":"",
+            "membershipLevel":"NP Membership since 2022"
+        }
+    ]
+}
