@@ -10,6 +10,18 @@ hamButton.addEventListener('click', () => {
     hamButton.classList.toggle('open');
 });
 
+//Directory page
+const url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
+const cards = document.querySelector('#directory_cards');
+
+async function getMemberData() {
+	const response = await fetch(url);
+	const data = await response.json();
+	console.log(data.members);
+	displayMembers(data.members);
+}
+
+getMemberData()
 
 // Tracking visit and Time in between page visit for Discover Page
 let lastVisitedTime = localStorage.getItem('lastVisitedTime');
@@ -33,7 +45,7 @@ localStorage.setItem("numVisits-ls", numVisits);
 if (numVisits == 1) {
     document.querySelector('.lastVisitedTime').textContent = "Welcome! Let us know if you have any questions";
 } else if (secondsDifference > 1 && secondsDifference < 86400 && numVisits > 1) {
-    document.querySelector('.lastVisitedTime').textContent = "Back so soon! Awesome";
+    document.querySelector('.lastVisitedTime').innerHTML = "Back so soon! Awesome";
 } else if (secondsDifference > 86400 && numVisits > 1 ) {
     document.querySelector('.lastVisitedTime').textContent = `You last visited ${daysDifference}`;
 } else if (secondsDifference > 86400 && numVisits > 2 ) {
@@ -73,14 +85,4 @@ function displayRatingValue() {
 
 document.querySelector('#timestamp').textContent = currentTime;
 
-//Directory page
-const url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
-const cards = document.querySelector('#directory_cards');
 
-async function getMemberData() {
-	const response = await fetch(url);
-	const data = await response.json();
-	console.log(data.members);
-}
-
-getMemberData();

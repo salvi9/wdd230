@@ -71,23 +71,30 @@ function displayResults(data) {
     captionDesc.textContent = `${desc}`
 }
 
-//dynamic learning activity
-const baseURL = "https://salvi9.github.io/wdd230/";
 const linksURL = "https://salvi9.github.io/wdd230/data/links.json";
-const link1 = document.querySelector('#links');
 
 async function getLinks() {
-    const response = await fetch(linksURL);
-    const data = await response.json();
-    console.log(data.weeks);
-    displayLinks(data.weeks);
-}
+  const response = await fetch(linksURL);
+  const data = await response.json();
 
+  const home_links = document.querySelectorAll('.learning_information #links li a');
+
+  let index = 0; 
+
+  data.weeks.forEach((week) => {
+    const links = week.links;
+
+    links.forEach((link) => {
+      const home_link = home_links[index];
+
+      if (home_link) {
+        home_link.href = link.url;
+        home_link.textContent = link.title;
+        index++; 
+      }
+    });
+  });
+}
 getLinks();
 
-const displayLinks = (weeks) => {
-    weeks.forEach((week) => {      
-       link1.setAttribute('href', week.links[0].url);
-       link1.textContent(`${week[0].links[1].title}`);
-    });
-};
+
