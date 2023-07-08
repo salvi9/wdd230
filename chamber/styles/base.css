@@ -124,3 +124,72 @@ header img {
 }
 
 /* Discover Page*/
+
+/* Directory Page*/
+
+.directory_menu {
+	margin: 1rem auto;
+	padding: .5rem;
+	background-color: #0067CB;
+	text-align: center;
+}
+
+.directory_menu button {
+	padding: 1rem;
+	font-weight: 700;
+}
+
+.directory_div {
+	border: 1px solid black;
+	padding: 0.5rem;
+	background-color: #eee;
+}
+
+.directory_grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+	align-items: center;
+}
+
+.directory_grid div {
+	text-align: center;
+}
+
+.directory_grid img {
+	border: 1px solid #fff;
+	box-shadow: 0 0 10px #333;
+}
+
+
+.directory_list {
+	display: flex;
+	flex-direction: column;
+}
+
+.directory_list div {
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr;
+	margin: 0;
+	padding: 0.25rem;
+}
+
+.directory_list div > * {
+	margin: 0 1rem;
+}
+
+.directory_list div img {
+	display: none; 
+}
+
+
+
+
+
+.directory_div h3 {
+	font-size: 1rem;
+}
+
+.directory_div a {
+	color: navy;
+}
