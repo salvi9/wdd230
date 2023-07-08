@@ -5,7 +5,7 @@
             "address":"1234 California",
             "phone":"123-456-7890",
             "url":"./index.html",
-            "image":"./images/comp_logo1.png",
+            "image":"./images/directory_image.webp",
             "membershipLevel":"Gold Member since 2012"
         },
         {
@@ -13,7 +13,7 @@
             "address":"1334 Utah",
             "phone":"123-456-7890",
             "url":"./index.html",
-            "image":"./images/comp_logo1.png",
+            "image":"./images/directory_image.webp",
             "membershipLevel":"Bronze Member since 2018"
         },
         {
@@ -21,7 +21,7 @@
             "address":"1234 Virginia",
             "phone":"123-456-7890",
             "url":"./index.html",
-            "image":"./images/comp_logo1.png",
+            "image":"./images/directory_image.webpg",
             "membershipLevel":"Gold Member since 2019"
         },
         {
@@ -29,7 +29,7 @@
             "address":"1234 Nevada",
             "phone":"123-456-7890",
             "url":"./index.html",
-            "image":"./images/comp_logo1.png",
+            "image":"./images/directory_image.webp",
             "membershipLevel":"NP Membership since 2023"
         },
         {
@@ -37,7 +37,7 @@
             "address":"1234 Carolina",
             "phone":"123-456-7890",
             "url":"./index.html",
-            "image":"./images/comp_logo1.png",
+            "image":"./images/directory_image.webp",
             "membershipLevel":"Silver Member since 2020"
         },
         {
@@ -45,7 +45,7 @@
             "address":"1345 Okal",
             "phone":"123-456-7890",
             "url":"./index.html",
-            "image":"./images/comp_logo1.png",
+            "image":"./images/directory_image.webp",
             "membershipLevel":"Silver Member since 2018"
         },
         {
@@ -53,7 +53,7 @@
             "address":"1234 Charlotte",
             "phone":"123-456-7890",
             "url":"./index.html",
-            "image":"./images/comp_logo1.png",
+            "image":"./images/directory_image.webp",
             "membershipLevel":"NP Membership since 2022"
         }
     ]
