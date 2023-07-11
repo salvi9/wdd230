@@ -10,6 +10,41 @@ hamButton.addEventListener('click', () => {
     hamButton.classList.toggle('open');
 });
 
+// Daily Forecast
+const currentTemp = document.querySelector('#current_temp');
+const weatherIcon = document.querySelector('#weather_icon');
+const captionDesc = document.querySelector('figcaption');
+
+const weather_url = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat=33.98&lon=-117.91&units=imperial&appid=c4a058b13b79ccef69303cb339daddc1';
+
+async function apiFetch() {
+    try {
+        const response = await fetch(weather_url);
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            displayResults(data);
+
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+apiFetch();
+/*
+
+function displayResults(data) {
+    currentTemp.innerHTML = `${data.main.temp}&deg;F`;
+    const iconsrc = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    let desc = data.weather[0].main;
+    weatherIcon.setAttribute('src', iconsrc);
+    weatherIcon.setAttribute('alt', `Picture of ${data.weather[0].description}`);
+    captionDesc.textContent = `${desc}`
+}
+*/
+
 //Directory page
 const url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
 const cards = document.querySelector('#directory_cards');
