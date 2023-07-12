@@ -11,42 +11,77 @@ hamButton.addEventListener('click', () => {
 });
 
 // Daily Forecast
-const currentTemp = document.querySelector('#current_temp');
-const weatherIcon = document.querySelector('#weather_icon');
-const captionDesc = document.querySelector('figcaption');
+const weather_url = 'https://api.openweathermap.org/data/2.5/forecast?lat=33.98&lon=-117.91&units=imperial&appid=8387eee76ed35d3bc4f13edb0a8d0fe0';
+async function apiWeather() {
+    const response = await fetch(weather_url);
+    const data = await response.json();
+    console.log(data);
 
-const weather_url = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat=33.98&lon=-117.91&units=imperial&appid=c4a058b13b79ccef69303cb339daddc1';
+    const noon = data.list.filter( x => x.dt_txt.includes('12:00:00'));
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    
+    let day = 0;
+    noon.forEach(forecast => {
+        // ,"dt_txt":"2023-07-12 12:00:00
+        let thedate = new Date(forecast.dt_txt) 
+        document.querySelector(`#day${day+1}`).textContent = weekdays[thedate.getDay()];
+        document.querySelector(`#weather${day+1}`).innerHTML = `${forecast.main.temp}&#176;F`;
+        
+        /*Image for weather forecast */
+        let imagesrc = `https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`; 
+        const desc = forecast.weather[0].description;
+        document.getElementById(`icon${day+1}`).setAttribute('src', imagesrc);
+        document.getElementById(`icon${day+1}`).setAttribute('alt', desc);
+        day++;
+})}
+apiWeather();
 
-async function apiFetch() {
-    try {
-        const response = await fetch(weather_url);
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-            displayResults(data);
 
-        } else {
-            throw Error(await response.text());
-        }
-    } catch (error) {
-        console.log(error);
-    }
-}
-apiFetch();
-/*
-
-function displayResults(data) {
-    currentTemp.innerHTML = `${data.main.temp}&deg;F`;
-    const iconsrc = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-    let desc = data.weather[0].main;
-    weatherIcon.setAttribute('src', iconsrc);
-    weatherIcon.setAttribute('alt', `Picture of ${data.weather[0].description}`);
-    captionDesc.textContent = `${desc}`
-}
-*/
-
-//Directory page
+//Member Json File
 const url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
+const spotlight_ads = document.querySelector('#spotlight');
+
+async function getMemberData() {
+	const response = await fetch(url);
+	const data = await response.json();
+    spotlight(data.members);
+}
+getMemberData()
+
+// Home page spotlight
+const spotlight = (members) => {
+    let counter = 0
+    members.forEach((member) => {
+        if (counter >= 3) {
+            return;
+        }
+
+        let card = document.createElement('div');
+        card.classList.add("company");
+        let tags = document.createElement('h3');
+        let tags1 = document.createElement('p')
+        let portrait = document.createElement('img');
+
+        portrait.setAttribute('src', member.image);
+        portrait.setAttribute('alt', `Portrait of ${member.name}`);
+        portrait.setAttribute('loading', 'lazy');
+        portrait.setAttribute('width', '240');
+        portrait.setAttribute('height', '340');
+
+        tags.textContent = `Name: ${member.name}`;
+        tags1.textContent = 'hello';
+        
+
+        card.appendChild(portrait);
+        card.appendChild(tags);
+		card.appendChild(tags1);
+        spotlight_ads.appendChild(card);
+        counter++;
+    });
+};
+
+
+//Member Json File
 const cards = document.querySelector('#directory_cards');
 
 async function getMemberData() {
@@ -55,7 +90,7 @@ async function getMemberData() {
 	displayMembers(data.members);
 }
 getMemberData()
-
+// Directory cards
 const displayMembers = (members) => {
     members.forEach((member) => {
         let card = document.createElement('div');
