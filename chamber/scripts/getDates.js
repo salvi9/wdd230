@@ -10,6 +10,23 @@ hamButton.addEventListener('click', () => {
     hamButton.classList.toggle('open');
 });
 
+
+// Banner Button
+const banner = document.querySelector('.banner');
+const banner_display = document.querySelector('.current_events')
+
+
+banner.addEventListener("click", () => {
+	banner_display.classList.remove('banner');
+	banner_display.classList.add('banner_none');
+});
+
+// Display Banner on Mondays, Tuesdays, and Wednesdays
+let banner_day = new Date().getDay();
+if (banner_day >= 1 && banner_day <= 3) {
+    document.querySelector('.current_events').display;
+}
+
 // Daily Forecast
 const weather_url = 'https://api.openweathermap.org/data/2.5/forecast?lat=33.98&lon=-117.91&units=imperial&appid=8387eee76ed35d3bc4f13edb0a8d0fe0';
 async function apiWeather() {
@@ -41,12 +58,12 @@ apiWeather();
 const url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
 const spotlight_ads = document.querySelector('#spotlight');
 
-async function getMemberData() {
+async function getSpotlightData() {
 	const response = await fetch(url);
 	const data = await response.json();
     spotlight(data.members);
 }
-getMemberData()
+getSpotlightData()
 
 // Home page spotlight
 const spotlight = (members) => {
@@ -54,27 +71,22 @@ const spotlight = (members) => {
     members.forEach((member) => {
         if (counter >= 3) {
             return;
-        }
+        } 
 
         let card = document.createElement('div');
         card.classList.add("company");
         let tags = document.createElement('h3');
-        let tags1 = document.createElement('p')
         let portrait = document.createElement('img');
 
         portrait.setAttribute('src', member.image);
         portrait.setAttribute('alt', `Portrait of ${member.name}`);
         portrait.setAttribute('loading', 'lazy');
-        portrait.setAttribute('width', '240');
-        portrait.setAttribute('height', '340');
-
-        tags.textContent = `Name: ${member.name}`;
-        tags1.textContent = 'hello';
+        
+        tags.textContent = `${member.name}`;
         
 
         card.appendChild(portrait);
         card.appendChild(tags);
-		card.appendChild(tags1);
         spotlight_ads.appendChild(card);
         counter++;
     });

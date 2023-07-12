@@ -43,17 +43,44 @@
     }
 
     .weather_current {
+        width: 75%;
+        margin: 5rem auto; 
+
+    }
+
+    .weather_section h2 {
+        text-align: center;
+    }
+
+    .weather_grid {
         display: flex;
-        width: 100%;  
-        margin: 5rem 0; 
+        width: 100%;
         flex-direction: row;
+    }
+
+    .forecast_div {
+        width: 100%;
+        text-align: center;
+        align-content: center;
+        border-right: 1px solid #333;
+    }
+
+    .forecast_div img {
+        margin: 0 auto;
+    }
+
+    .forecast_div span, .forecast_div img {
+        display: block;
     }
 
 
     .current_events {
-        width: 30%;
+        width: 70%;
+        padding: 0 2rem;
         border: 1px solid black;
-        margin: 0;
+        margin: 0 auto;
+        font-size: 2rem;
+        text-align: center;
 
     }
 
