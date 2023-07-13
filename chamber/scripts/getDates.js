@@ -95,10 +95,11 @@ const spotlight = (members) => {
 
 
 //Member Json File
+const dir_url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
 const cards = document.querySelector('#directory_cards');
 
 async function getMemberData() {
-	const response = await fetch(url);
+	const response = await fetch(dir_url);
 	const data = await response.json();
 	displayMembers(data.members);
 }
