@@ -11,95 +11,11 @@ hamButton.addEventListener('click', () => {
 });
 
 
-// Banner Button
-const banner = document.querySelector('.banner');
-const banner_display = document.querySelector('.current_events')
-
-
-banner.addEventListener("click", () => {
-	banner_display.classList.remove('banner');
-	banner_display.classList.add('banner_none');
-});
-
-// Display Banner on Mondays, Tuesdays, and Wednesdays
-let banner_day = new Date().getDay();
-if (banner_day >= 1 && banner_day <= 2) {
-    banner_display.classList.remove('banner');
-    banner_display.classList.add('banner_none');
-}
-
-// Daily Forecast
-const weather_url = 'https://api.openweathermap.org/data/2.5/forecast?lat=33.98&lon=-117.91&units=imperial&appid=8387eee76ed35d3bc4f13edb0a8d0fe0';
-async function apiWeather() {
-    const response = await fetch(weather_url);
-    const data = await response.json();
-    console.log(data);
-
-    const noon = data.list.filter( x => x.dt_txt.includes('12:00:00'));
-    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    
-    let day = 0;
-    noon.forEach(forecast => {
-        // ,"dt_txt":"2023-07-12 12:00:00
-        let thedate = new Date(forecast.dt_txt) 
-        document.querySelector(`#day${day+1}`).textContent = weekdays[thedate.getDay()];
-        document.querySelector(`#weather${day+1}`).innerHTML = `${forecast.main.temp}&#176;F`;
-        
-        /*Image for weather forecast */
-        let imagesrc = `https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`; 
-        const desc = forecast.weather[0].description;
-        document.getElementById(`icon${day+1}`).setAttribute('src', imagesrc);
-        document.getElementById(`icon${day+1}`).setAttribute('alt', desc);
-        day++;
-})}
-apiWeather();
-
-
 //Member Json File
-const url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
-const spotlight_ads = document.querySelector('#spotlight');
-
-async function getSpotlightData() {
-	const response = await fetch(url);
-	const data = await response.json();
-    spotlight(data.members);
-}
-getSpotlightData()
-
-// Home page spotlight
-const spotlight = (members) => {
-    let counter = 0
-    members.forEach((member) => {
-        if (counter >= 3) {
-            return;
-        } 
-
-        let card = document.createElement('div');
-        card.classList.add("company");
-        let tags = document.createElement('h3');
-        let portrait = document.createElement('img');
-
-        portrait.setAttribute('src', member.image);
-        portrait.setAttribute('alt', `Portrait of ${member.name}`);
-        portrait.setAttribute('loading', 'lazy');
-        
-        tags.textContent = `${member.name}`;
-        
-
-        card.appendChild(portrait);
-        card.appendChild(tags);
-        spotlight_ads.appendChild(card);
-        counter++;
-    });
-};
-
-
-//Member Json File
-const dir_url = 'https://salvi9.github.io/wdd230/chamber/data/members.json';
 const cards = document.querySelector('#directory_cards');
 
 async function getMemberData() {
-	const response = await fetch(dir_url);
+	const response = await fetch(url);
 	const data = await response.json();
 	displayMembers(data.members);
 }
@@ -162,6 +78,7 @@ function showList() {
 	display.classList.add("directory_list");
 	display.classList.remove("directory_grid");
 }
+
 
 
 // Tracking visit and Time in between page visit for Discover Page
