@@ -27,6 +27,10 @@ li a{
     text-decoration: none;
 }
 
+#menu {
+    position: absolute;
+    right: 0px;
+}
 
 #menu::before {
 	content: "☰";
@@ -101,10 +105,12 @@ header img {
 }
 
 .current_events {
-    width: 70%;
+    width: 100%;
     border: 1px solid black;
     font-size: 2rem;
     text-align: center;
+    background-color: #ECF0F3;
+
 }
 
 .banner_none{
@@ -113,18 +119,24 @@ header img {
 
 .current_events h2 {
     padding: 2rem;
+    
 }
 
 .banner {
     position: absolute;
-    right: 282px;
+    right: 0px;
 }
+
 .banner::before {
 	content: "❌";
 }
 
 .banner.open::before {
 	display: none;
+}
+
+.spotlights {
+    text-align: center;
 }
 
 .spotlight_ads {
@@ -143,8 +155,9 @@ header img {
 }
 
 
-.call_to_action {
+.call_to_action p{
     text-align: center;
+    width: 100%;
 }
 
 .footer_cards {
