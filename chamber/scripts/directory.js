@@ -66,3 +66,4 @@ function showList() {
 	display.classList.add("directory_list");
 	display.classList.remove("directory_grid");
 }
+
