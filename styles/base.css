@@ -66,10 +66,7 @@ li a:hover {
 }
     
 .overlay {
-    position: absolute;
-    left: 110px;
-    bottom: 390px;
-
+    display: none;
 }
 
 .hero img{
