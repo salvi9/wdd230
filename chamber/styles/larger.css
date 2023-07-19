@@ -116,7 +116,7 @@
         text-align: center;
         background-color: #ECF0F3;
         padding: 1em;
-        padding-top: none;
+        padding: 1rem;
     }
 
     .dis_sites h2 {
